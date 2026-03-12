@@ -362,15 +362,18 @@ tw-link {
 (if: $faction is &quot;暮谣见闻社&quot;)[
   (enchant: ?page, (text-colour: #3c3c6d) + (bg: #dee0d7))
   &lt;div class=&quot;story-wrapper&quot;&gt;
-    &lt;div class=&quot;narrative-block&quot;&gt;
-      塔恩：中立之域的码头发生了失窃事件，你需要去调查一下。
+    &lt;div class=&quot;dialogue-block&quot;&gt;
+      &lt;div class=&quot;character-name&quot;&gt;塔恩：&lt;/div&gt;
+      &lt;div class=&quot;speech-content&quot;&gt;
+        中立之域的码头发生了失窃事件，你需要去调查一下。
+      &lt;/div&gt;
     &lt;/div&gt;
 
-    &lt;div class=&quot;narrative-block&quot; style=&quot;opacity: 0.8; font-size: 0.9em;&quot;&gt;
+    &lt;div class=&quot;item-get&quot;&gt;
       获得物品：档案 - 码头失窃事件
     &lt;/div&gt;
 
-    &lt;hr class=&quot;simple-divider&quot;&gt;
+    &lt;hr class=&quot;simple-divider-blue&quot;&gt;
 
     &lt;div class=&quot;choice-container&quot;&gt;
       [[▶ 继续-&gt;初始章]]
@@ -380,11 +383,14 @@ tw-link {
 (else:)[
   (enchant:?page,(text-colour:#151514)+(bg:#dbd19f))
   &lt;div class=&quot;story-wrapper&quot;&gt;
-    &lt;div class=&quot;narrative-block&quot;&gt;
-      杰克：昨日反馈的折声点报告显示数值异常了。需要麻烦你前去调查一下！
+    &lt;div class=&quot;dialogue-block&quot;&gt;
+      &lt;div class=&quot;character-name&quot;&gt;杰克：&lt;/div&gt;
+      &lt;div class=&quot;speech-content&quot;&gt;
+        昨日反馈的折声点报告显示数值异常了。需要麻烦你前去调查一下！
+      &lt;/div&gt;
     &lt;/div&gt;
 
-    &lt;div class=&quot;narrative-block&quot; style=&quot;opacity: 0.8; font-size: 0.9em;&quot;&gt;
+    &lt;div class=&quot;item-get&quot;&gt;
       获得物品：档案 - 折声点异常记录
     &lt;/div&gt;
 
@@ -405,27 +411,43 @@ tw-link {
     padding-top: 15vh;
 }
 
-.narrative-block {
-    margin-bottom: 30px;
-    line-height: 1.7;
+.dialogue-block {
+    margin-bottom: 40px;
 }
 
-.simple-divider {
+.character-name {
+    font-weight: bold;
+    margin-bottom: 15px;
+    opacity: 0.9;
+}
+
+.speech-content {
+    margin-bottom: 20px;
+}
+
+/* 统一物品获得样式，与对话区块拉开距离 */
+.item-get {
+    font-weight: bold;
+    font-size: 1.05em;
+    margin-bottom: 30px;
+}
+
+.simple-divider-blue {
     border: 0;
-    border-top: 1px solid rgba(60, 60, 109, 0.3);
+    border-top: 1px solid rgba(60, 60, 109, 0.2);
     width: 60px;
-    margin: 30px auto;
+    margin: 40px auto;
 }
 
 .simple-divider-dark {
     border: 0;
-    border-top: 1px solid rgba(21, 21, 20, 0.3);
+    border-top: 1px solid rgba(21, 21, 20, 0.2);
     width: 60px;
-    margin: 30px auto;
+    margin: 40px auto;
 }
 
 .choice-container {
-    margin-top: 40px;
+    margin-top: 20px;
 }
 
 tw-link {
